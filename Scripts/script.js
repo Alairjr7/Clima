@@ -30,6 +30,14 @@ const Search = () => {
 // Adiciona um evento de clique ao ícone de busca
 document.getElementById("search").addEventListener("click", Search);
 
+// Pega o valor do input com a tecla enter
+document.addEventListener('keydown', (event) =>{
+  if(event.key === 'Enter'){
+    const inputcity = document.getElementById("inputnamecity").value;
+    SearchServerCity(inputcity);
+  }
+})
+
 // Função que exibe os dados retornados da API na interface
 const showDataOnScreen = (data) => {
   // Atualiza o nome da cidade no elemento com ID "namecity"
